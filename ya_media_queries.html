@@ -1,0 +1,15 @@
+<html>
+<head>
+<meta name="viewport" content="ya-title=fade">
+<style>
+@media only (ya-title-fade: true) {
+  body { background-color: black }
+}
+@media only (ya-dock-fade: false) {
+  #dock_div { display: block }
+}
+</style>
+</head>
+<body>
+<div id="dock_div" style="display:none">This div is shown if dock is not faded and media query is supported.</div>
+</body>
