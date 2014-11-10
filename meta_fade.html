@@ -1,0 +1,20 @@
+<head>
+<meta name="viewport" content="ya-title=fade">
+<style>
+#header_div { display: none }
+#message_custo_enabled { display: none }
+#message_custo_disabled { display: block }
+@media (custo-top: 1) {
+  #header_div { display: block }
+  #message_custo_enabled { display: block }
+  #message_custo_disabled { display: none }
+}
+</style>
+</head>
+<body>
+<div style="height:33px; background-color:green" id="header_div"></div>
+This document shows the effect of 
+<div id="message_custo_enabled">You should see this message and a green placeholder under the titlebar if Custo is enabled. You shouldn't see this message if Custo is disabled.</div>
+<div id="message_custo_disabled">You should see this message and no green placeholder under the titlebar if Custo is disabled. You shouldn't see this message if Custo is enabled.</div>
+
+</body>
