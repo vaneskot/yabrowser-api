@@ -80,7 +80,7 @@ function handleCheckbox() {
   var fadeTitlebar = document.getElementById("titlebar_checkbox").checked;
   var fadeDock = document.getElementById("dock_checkbox").checked;
   var metaContentString = (fadeTitlebar ? "ya-title-fade=true," : "") + (fadeDock ? "ya-dock-fade=true" : "");
-  document.getElementsByName("meta")[0].setAttribute("content", metaContentString);
+  document.getElementsByTagName("meta")[0].setAttribute("content", metaContentString);
 };
 </script>
 </body>
