@@ -2,15 +2,87 @@
 <head>
 <meta name="viewport" content="ya-title=fade">
 <style>
-@media only (ya-title-fade: true) {
-  body { background-color: red }
+.title_fade_enabled, .title_fade_disabled,
+.dock_fade_enabled, .dock_fade_disabled {
+  display: none;
 }
-@media only (ya-dock-fade: false) {
-  #dock_div { display: block }
+.fade_supported {
+  display: none
+}
+.dock_div {
+  position: fixed;
+  bottom: 40px;
+}
+.fade_not_supported {
+  display: block;
+}
+
+@media (ya-title-fade: true) (ya-title-fade: false) (ya-dock-fade: true) (ya-dock-fade: false) {
+  .fade_not_supported {
+    display: none;
+  }
+  .fade_supported {
+    display: block;
+  }
+}
+
+@media (ya-title-fade: true) {
+  .title_fade_enabled {
+    display: block;
+  }
+  .title_fade_disabled {
+    display: none;
+  }
+}
+@media (ya-title-fade: false) {
+  .title_fade_enabled {
+    display: none;
+  }
+  .title_fade_disabled {
+    display: block;
+  }
+}
+
+@media (ya-dock-fade: true) {
+  .dock_fade_enabled {
+    display: block;
+  }
+  .dock_fade_disabled {
+    display: none;
+  }
+}
+@media (ya-dock-fade: false) {
+  .dock_fade_enabled {
+    display: none;
+  }
+  .dock_fade_disabled {
+    display: block;
+  }
 }
 </style>
 </head>
 <body>
-This text will be under titlebar if "ya-title=fade" is supported.
-<div id="dock_div" style="display:none">This div is shown if dock is not faded and media query is supported.</div>
+<div class="fade_supported">
+This text will be overlayed by titlebar if "ya-title=fade" is supported and enabled and under titlebar if disabled.
+This text should not be visible if it is not supported.
+</div>
+<div class="fade_supported dock_div">
+This text will be overlayed by dock if "ya-dock=fade" is supported and enabled and over the dock if disabled.
+This text should not be visible if it is not supported.
+</div>
+<div class="fade_not_supported">
+This is the only text that should be visible if fade is not supported. It shouldn't be visible if fade is supported.
+</div>
+<div class="title_fade_enabled">
+This text should be visible if and only if title fade is supported and enabled.
+</div>
+<div class="title_fade_disabled">
+This text should be visible if and only if title fade is supported and disabled.
+</div>
+<div class="dock_fade_enabled">
+This text should be visible if and only if title fade is supported and enabled.
+</div>
+<div class="dock_fade_disabled">
+This text should be visible if and only if title fade is supported and disabled.
+</div>
 </body>
