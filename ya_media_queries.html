@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta name="viewport" content="">
+<meta name="viewport" content="ya-title=fade">
 <style>
 .title_fade_enabled, .title_fade_disabled,
 .dock_fade_enabled, .dock_fade_disabled {
@@ -73,8 +73,10 @@ This text should be visible if and only if title fade is supported and enabled.
 <div class="dock_fade_disabled">
 This text should be visible if and only if title fade is supported and disabled.
 </div>
-<input class="fade_supported" id="titlebar_checkbox" type="checkbox" onchange="handleCheckbox();">Titlebar fade</input><br>
-<input class="fade_supported" id="dock_checkbox" type="checkbox" onchange="handleCheckbox();">Dock fade</input>
+<div class="fade_supported">
+<input id="titlebar_checkbox" type="checkbox" onchange="handleCheckbox();">Titlebar fade<br>
+<input id="dock_checkbox" type="checkbox" onchange="handleCheckbox();">Dock fade<br>
+</div>
 <script>
 function handleCheckbox() {
   var fadeTitlebar = document.getElementById("titlebar_checkbox").checked;
