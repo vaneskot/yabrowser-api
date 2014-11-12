@@ -79,7 +79,7 @@ This text should be visible if and only if title fade is supported and disabled.
 function handleCheckbox() {
   var fadeTitlebar = document.getElementById("titlebar_checkbox").checked;
   var fadeDock = document.getElementById("dock_checkbox").checked;
-  var metaContentString = (fadeTitlebar ? "ya-title-fade=true," : "") + (fadeDock ? "ya-dock-fade=true" : "");
+  var metaContentString = (fadeTitlebar ? "ya-title=fade," : "") + (fadeDock ? "ya-dock=fade" : "");
   document.getElementsByTagName("meta")[0].setAttribute("content", metaContentString);
 };
 </script>
