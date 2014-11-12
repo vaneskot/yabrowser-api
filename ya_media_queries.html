@@ -30,14 +30,8 @@
   .title_fade_enabled {
     display: block;
   }
-  .title_fade_disabled {
-    display: none;
-  }
 }
 @media (ya-title-fade: false) {
-  .title_fade_enabled {
-    display: none;
-  }
   .title_fade_disabled {
     display: block;
   }
@@ -47,14 +41,8 @@
   .dock_fade_enabled {
     display: block;
   }
-  .dock_fade_disabled {
-    display: none;
-  }
 }
 @media (ya-dock-fade: false) {
-  .dock_fade_enabled {
-    display: none;
-  }
   .dock_fade_disabled {
     display: block;
   }
@@ -85,4 +73,15 @@ This text should be visible if and only if title fade is supported and enabled.
 <div class="dock_fade_disabled">
 This text should be visible if and only if title fade is supported and disabled.
 </div>
+<input class="fade_supported" id="titlebar_checkbox" type="checkbox" onchange="handleCheckbox();">Titlebar fade</input><br>
+<input class="fade_supported" id="dock_checkbox" type="checkbox" onchange="handleCheckbox();">Dock fade</input>
+<script>
+function handleCheckbox() {
+  var fadeTitlebar = document.getElementById("titlebar_checkbox").checked;
+  var fadeDock = document.getElementById("dock_checkbox").checked;
+  var metaContentString = (fadeTitlebar ? "ya-title-fade=true," : "") + (fadeDock ? "ya-dock-fade=true" : "");
+  document.getElementsByName("meta")[0].setAttribute("content", metaContentString);
+};
+</script>
 </body>
+</html>
